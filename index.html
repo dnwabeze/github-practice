@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lumen — Demo Frontend</title>
+  <meta name="description" content="A demo frontend website: a landing page for Lumen, a fictional task-planning app." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="#" class="logo" aria-label="Lumen home">
+        <span class="logo-mark" aria-hidden="true"></span>Lumen
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#demo">Try it</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">◐</button></li>
+        <li><a href="#contact" class="btn btn-small">Get started</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero container">
+      <div class="hero-copy">
+        <p class="eyebrow">Plan less. Do more.</p>
+        <h1>Your day, <span class="gradient-text">beautifully organized</span>.</h1>
+        <p class="lead">Lumen is a fictional task planner built to show off a modern, responsive frontend — no frameworks, just HTML, CSS and vanilla JavaScript.</p>
+        <div class="hero-actions">
+          <a href="#demo" class="btn">Try the live demo</a>
+          <a href="#features" class="btn btn-ghost">See features</a>
+        </div>
+        <ul class="stats">
+          <li><strong data-count="12000">0</strong><span>happy users</span></li>
+          <li><strong data-count="98">0</strong><span>% satisfaction</span></li>
+          <li><strong data-count="4">0</strong><span>min setup</span></li>
+        </ul>
+      </div>
+      <div class="hero-card" aria-hidden="true">
+        <div class="mock-window">
+          <div class="mock-bar"><i></i><i></i><i></i></div>
+          <div class="mock-body">
+            <div class="mock-row done">Morning standup</div>
+            <div class="mock-row done">Review pull request</div>
+            <div class="mock-row">Ship landing page</div>
+            <div class="mock-row">Plan sprint</div>
+            <div class="mock-progress"><span style="width: 50%"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section container">
+      <h2 class="section-title reveal">Everything you need</h2>
+      <p class="section-sub reveal">Small, focused tools that stay out of your way.</p>
+      <div class="grid features">
+        <article class="card reveal">
+          <div class="icon">⚡</div>
+          <h3>Lightning fast</h3>
+          <p>Add, check off and filter tasks instantly. Everything runs in your browser.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon">🌗</div>
+          <h3>Light &amp; dark</h3>
+          <p>Follows your system theme, or switch manually with one click.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon">📱</div>
+          <h3>Fully responsive</h3>
+          <p>Looks great on phones, tablets and wide desktop screens.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon">💾</div>
+          <h3>Saves locally</h3>
+          <p>Your tasks persist in local storage, so they're still here when you return.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon">♿</div>
+          <h3>Accessible</h3>
+          <p>Semantic markup, keyboard support and visible focus states throughout.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon">🧩</div>
+          <h3>Zero dependencies</h3>
+          <p>No build step. Open <code>index.html</code> and you're done.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Interactive demo -->
+    <section id="demo" class="section container">
+      <h2 class="section-title reveal">Try it right here</h2>
+      <p class="section-sub reveal">A working mini task list. Go ahead — add something.</p>
+      <div class="todo card reveal">
+        <form id="todo-form" class="todo-form">
+          <label for="todo-input" class="sr-only">New task</label>
+          <input id="todo-input" type="text" placeholder="What needs doing?" autocomplete="off" maxlength="100" required />
+          <button class="btn" type="submit">Add</button>
+        </form>
+        <div class="todo-filters" role="group" aria-label="Filter tasks">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="active">Active</button>
+          <button class="chip" data-filter="done">Done</button>
+        </div>
+        <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
+        <div class="todo-footer">
+          <span id="todo-count">0 tasks left</span>
+          <button id="clear-done" class="link-btn">Clear completed</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="section container">
+      <h2 class="section-title reveal">Simple pricing</h2>
+      <div class="billing-toggle reveal">
+        <span>Monthly</span>
+        <label class="switch">
+          <input type="checkbox" id="billing" aria-label="Bill yearly" />
+          <span class="slider"></span>
+        </label>
+        <span>Yearly <em class="badge">-20%</em></span>
+      </div>
+      <div class="grid pricing">
+        <article class="card plan reveal">
+          <h3>Starter</h3>
+          <p class="price"><span data-monthly="0" data-yearly="0">$0</span><small>/mo</small></p>
+          <ul><li>Up to 50 tasks</li><li>1 device</li><li>Community support</li></ul>
+          <a href="#contact" class="btn btn-ghost">Choose Starter</a>
+        </article>
+        <article class="card plan featured reveal">
+          <p class="ribbon">Most popular</p>
+          <h3>Pro</h3>
+          <p class="price"><span data-monthly="8" data-yearly="6.4">$8</span><small>/mo</small></p>
+          <ul><li>Unlimited tasks</li><li>All devices</li><li>Priority support</li></ul>
+          <a href="#contact" class="btn">Choose Pro</a>
+        </article>
+        <article class="card plan reveal">
+          <h3>Team</h3>
+          <p class="price"><span data-monthly="20" data-yearly="16">$20</span><small>/mo</small></p>
+          <ul><li>Everything in Pro</li><li>Shared boards</li><li>Admin controls</li></ul>
+          <a href="#contact" class="btn btn-ghost">Choose Team</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section container narrow">
+      <h2 class="section-title reveal">Questions?</h2>
+      <details class="reveal"><summary>Is Lumen a real product?</summary><p>No — it's a fictional brand used to demonstrate a frontend website.</p></details>
+      <details class="reveal"><summary>Where are my tasks stored?</summary><p>In your browser's local storage. Nothing is sent to a server.</p></details>
+      <details class="reveal"><summary>Can I reuse this code?</summary><p>Absolutely. It's plain HTML, CSS and JavaScript — fork it and make it yours.</p></details>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section container narrow">
+      <h2 class="section-title reveal">Get in touch</h2>
+      <form id="contact-form" class="card contact-form reveal" novalidate>
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required />
+          <small class="error" aria-live="polite"></small>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+          <small class="error" aria-live="polite"></small>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required minlength="10"></textarea>
+          <small class="error" aria-live="polite"></small>
+        </div>
+        <button class="btn" type="submit">Send message</button>
+        <p class="form-success" id="form-success" hidden>Thanks! This is a demo, so nothing was actually sent. ✨</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Lumen — a demo frontend.</p>
+      <a href="#" class="back-top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
